@@ -1,15 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FacensFn : MonoBehaviour
 {
     string btnName;
     public GameObject predio;
+    public Button botao;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        predio.SetActive(false);
+        botao.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,13 +29,19 @@ public class FacensFn : MonoBehaviour
             {
                 btnName = Hit.transform.name;
 
-                if (btnName == "btn")
+                if (btnName == "btnC")
                 {
                     predio.SetActive(true);
+                    botao.gameObject.SetActive(true);
                 }
+
             }
-
-
         }
+    }
+    public void Hide()
+    { 
+            predio.SetActive(false);
+            botao.gameObject.SetActive(false);
+        //GameObject.FindGameObjectWithTag("btnRestart").SetActive(false);
     }
 }
