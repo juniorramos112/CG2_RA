@@ -6,14 +6,16 @@ using UnityEngine.UI;
 public class FacensFn : MonoBehaviour
 {
     string btnName;
-    public GameObject predio;
+    public GameObject predioC,predioD;
     public Button botao;
+    public Text texto;
     
     // Start is called before the first frame update
     void Start()
     {
 
-        predio.SetActive(false);
+        predioC.SetActive(false);
+        predioD.SetActive(false);
         botao.gameObject.SetActive(false);
     }
 
@@ -31,8 +33,16 @@ public class FacensFn : MonoBehaviour
 
                 if (btnName == "btnC")
                 {
-                    predio.SetActive(true);
+                    predioC.SetActive(true);
                     botao.gameObject.SetActive(true);
+                    texto.text = "Bloco C - Facens";
+                }
+
+                if (btnName == "btnD")
+                {
+                    predioD.SetActive(true);
+                    botao.gameObject.SetActive(true);
+                    texto.text = "Bloco D - Facens";
                 }
 
             }
@@ -40,7 +50,8 @@ public class FacensFn : MonoBehaviour
     }
     public void Hide()
     { 
-            predio.SetActive(false);
+            predioC.SetActive(false);
+            predioD.SetActive(false);
             botao.gameObject.SetActive(false);
         //GameObject.FindGameObjectWithTag("btnRestart").SetActive(false);
     }
